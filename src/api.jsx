@@ -19,47 +19,56 @@ export function TOKEN_VALIDATE_POST(token) {
     options: {
       method: "POST",
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: "Bearer " + token,
       },
     },
   };
 }
 
-export function USER_GET(token){
-    return {
+export function USER_GET(token) {
+  return {
     url: API_URL + "/api/user",
     options: {
       method: "GET",
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: "Bearer " + token,
       },
     },
   };
 }
 
-export function USER_POST(body){
-    return {
+export function USER_POST(body) {
+  return {
     url: API_URL + "/api/user",
     options: {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-       body: JSON.stringify(body),
+      body: JSON.stringify(body),
     },
   };
 }
 
-
-export function PHOTO_POST(formData, token){
-    return {
+export function PHOTO_POST(formData, token) {
+  return {
     url: API_URL + "/api/photo",
     options: {
       method: "POST",
       headers: {
-        Authorization: 'Bearer ' + token,
+        Authorization: "Bearer " + token,
       },
-      body: formData, 
+      body: formData,
+    },
+  };
+}
+
+export function PHOTOS_GET({ page, total, user }) {
+  return {
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
     },
   };
 }
