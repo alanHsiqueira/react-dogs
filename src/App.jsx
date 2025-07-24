@@ -10,6 +10,7 @@ import User from "./Components/User/User";
 import ProtectedRouter from "./Components/Help/ProtectedRouter";
 import Photo from "./Components/Photo/Photo";
 import UserProfile from "./Components/User/UserProfile";
+import NotFound from "./Components/NotFound";
 
 const App = () => {
   return (
@@ -36,6 +37,11 @@ const App = () => {
             path="perfil/:user" 
             element={<UserProfile />}
             />
+            <Route
+            path="*" 
+            element={<NotFound />}
+            />
+            
           </Routes>
           <Footer />
         </UserStorage>
