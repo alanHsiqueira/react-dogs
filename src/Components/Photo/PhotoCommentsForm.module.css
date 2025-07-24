@@ -5,6 +5,10 @@
   margin: 1rem;
 }
 
+.single.form{
+  margin: 1rem 0;
+}
+
 .textarea{
   display: block;
   width: 100%;
@@ -43,7 +47,7 @@
 .button:focus svg path,
 .button:hover svg path{
   fill: #fb1;
-  stoke: #fb1;
+  stroke: #fb1;
 }
 .button:focus svg g,
 .button:hover svg g{
