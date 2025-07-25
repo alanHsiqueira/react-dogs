@@ -5,6 +5,7 @@ import { PHOTO__GET } from '../../api';
 import Error from '../Help/Error';
 import Loading from '../Help/Loading';
 import PhotoContent from './PhotoContent';
+import Head from '../Help/Head';
 
 const Photo = () => {
   const {id} = useParams();
@@ -16,6 +17,7 @@ const Photo = () => {
   if(error) return <Error error={error} />
   if(loading) return <Loading />
   if(data) return <section className='container mainContainer'>
+    <Head title={data.photo.title} />
     <PhotoContent single={true} data={data} />
   </section>
   else return null

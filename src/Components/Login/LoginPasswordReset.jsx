@@ -11,7 +11,7 @@ const LoginPasswordReset = () => {
   const [login, setLogin] = React.useState("");
   const [key, setKey] = React.useState("");
   const password = useForm();
-  const { error, loading, request, data } = useFetch();
+  const { error, loading, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -35,6 +35,7 @@ const LoginPasswordReset = () => {
   }
   return (
     <div>
+      <Head title="Resete a senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Nova Senha" type="password" name="password" {...password} />
